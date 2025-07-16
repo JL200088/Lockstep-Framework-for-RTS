@@ -16,7 +16,7 @@ public class CommandResult {
      * The frame index this command belongs to.
      * 命令所属的同步逻辑帧编号
      */
-    private int syncFrame;
+    private long syncFrame;
 
     /**
      * Whether the command was successfully fetched.

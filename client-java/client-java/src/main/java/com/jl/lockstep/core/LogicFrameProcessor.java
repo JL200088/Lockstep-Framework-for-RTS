@@ -21,7 +21,7 @@ public class LogicFrameProcessor implements Runnable {
     private WorldUpdator worldUpdator;           // 世界状态更新器 (World state updater)
     private CommandTransciever cmdReceiver;      // 命令接收器 (Command receiver)
     private int forceSyncFrame;                  // 强制同步间隔帧数 (Sync command every N frames)
-    private int logicFrame;                      // 当前逻辑帧编号 (Current logic frame number)
+    private long logicFrame;                      // 当前逻辑帧编号 (Current logic frame number)
     private int targetFrameRate;                 // 目标帧率 (Target frame rate, e.g. 20 FPS)
     private long targetFrameTime;                // 每帧目标持续时间（毫秒）(Frame time in milliseconds)
 
