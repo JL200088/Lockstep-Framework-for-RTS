@@ -10,7 +10,7 @@ public interface WorldUpdator {
      * Update the entire world state for the current logic frame.
      * 更新当前逻辑帧的整个世界状态
      */
-    public void updateWorld();
+    public void updateWorld(long frame);
 
     /**
      * Apply a new command to the world before updating.

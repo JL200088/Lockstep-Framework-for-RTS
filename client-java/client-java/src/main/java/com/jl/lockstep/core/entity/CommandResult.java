@@ -22,7 +22,7 @@ public class CommandResult {
      * Whether the command was successfully fetched.
      * 是否成功获取命令
      */
-    private boolean successFetching;
+    private boolean successFetching=true;
 
     /**
      * The actual command to be executed.

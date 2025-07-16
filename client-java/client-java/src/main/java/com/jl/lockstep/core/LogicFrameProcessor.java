@@ -4,14 +4,11 @@ import com.jl.lockstep.core.entity.CommandResult;
 import com.jl.lockstep.core.interfaces.CommandTransciever;
 import com.jl.lockstep.core.interfaces.WorldUpdator;
 import lombok.Data;
-
-import java.time.Duration;
-import java.time.LocalTime;
+import org.springframework.stereotype.Component;
 
 /**
  * LogicFrameProcessor is responsible for processing game logic frames in a loop,
  * synchronizing commands at regular intervals, and updating the game world.
- *
  * LogicFrameProcessor 负责在循环中处理游戏逻辑帧，
  * 每隔固定帧同步一次命令，并更新游戏世界状态。
  */
@@ -58,12 +55,12 @@ public class LogicFrameProcessor implements Runnable {
                 CommandResult result = cmdReceiver.getCmd();
                 if (result.isSuccessFetching()) {
                     worldUpdator.updateCommand(result.getCommand());
-                    worldUpdator.updateWorld();
+                    worldUpdator.updateWorld(logicFrame);
                 }
             } else {
                 // 普通帧只更新世界状态
                 // Non-sync frame: only update world state
-                worldUpdator.updateWorld();
+                worldUpdator.updateWorld(logicFrame);
             }
 
             try {
