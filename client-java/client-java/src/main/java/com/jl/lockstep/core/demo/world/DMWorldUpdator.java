@@ -7,7 +7,6 @@ public class DMWorldUpdator implements WorldUpdator {
 
     @Override
     public void updateWorld() {
-
     }
 
     @Override
